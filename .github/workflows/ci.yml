@@ -41,7 +41,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      # TODO(step-6e): tag and push the image as both :latest and :${{ github.sha }}.
+      # TODO(step-6e): tag and push the image as both :latest and :${{ github.sha }}./
       - name: Tag and push
       run: |
           FULL=${{ secrets.DOCKERHUB_USERNAME }}/$IMAGE_NAME
