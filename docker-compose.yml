@@ -3,7 +3,7 @@ services:
     # TODO(step-5a): build the image from the local Dockerfile and expose port 3000.
       build: .
       ports:
-        - "localhost:3000"
+        - "3000:3000"
 
     # TODO(step-5b): set the DATABASE_URL env var so the app can reach Postgres.
       # HINT: you can find this URL in .env.example
@@ -44,4 +44,4 @@ services:
 
 # TODO(step-5h): declare the named volume `pgdata` at the top level.
 volumes:
-  ???:
+  pgdata:
