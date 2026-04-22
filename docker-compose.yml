@@ -8,12 +8,11 @@ services:
     # TODO(step-5b): set the DATABASE_URL env var so the app can reach Postgres.
       # HINT: you can find this URL in .env.example
       environment:
-          DATABASE_URL: process.env.DATABASE_URL 
-
+          DATABASE_URL: postgresql://postgres:postgres@db:5432/workshop
     # TODO(step-5c): make `web` wait until `db` is healthy before starting.
-      ???:
-        ???:
-          condition: service_healthy
+      depends_on:
+      db:
+        condition: service_healthy
 
   db:
     # TODO(step-5d): use postgres:16-alpine and define a healthcheck using pg_isready.
